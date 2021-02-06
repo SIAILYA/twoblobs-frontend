@@ -42,7 +42,7 @@ const articles = [
 ]
 
 const App = () => {
-	const [activeView, setActiveView] = useState("main");
+	const [activeView, setActiveView] = useState("knowledge-test");
 	const [activePanel, setActivePanel] = useState("main");
 	const [activeArticlePanel, setActiveArticlePanel] = useState("feed");
 	const [activeStory, setActiveStory] = useState("match");
@@ -244,6 +244,11 @@ const App = () => {
 							<Cell>Одна капля</Cell>
 							<Button onClick={() => {setActivePanel("main")}}>Переход на другую панель</Button>
 						</Group>
+					</Panel>
+				</View>
+				<View id="knowledge-test" activePanel="knowledge-test">
+					<Panel id="test">
+
 					</Panel>
 				</View>
 			</Root>
