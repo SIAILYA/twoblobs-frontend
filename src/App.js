@@ -4,7 +4,8 @@ import '@vkontakte/vkui/dist/vkui.css';
 import {
 	Div, Header, Group, PanelHeader, View, AppRoot,
 	Button, Cell, Epic, Panel, Root, Tabbar, TabbarItem,
-	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack
+	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack,
+	Radio, FormLayout, FormItem
 } from "@vkontakte/vkui";
 import {
 	Icon16ArticleOutline,
@@ -246,9 +247,84 @@ const App = () => {
 						</Group>
 					</Panel>
 				</View>
-				<View id="knowledge-test" activePanel="knowledge-test">
+				<View id="knowledge-test" activePanel="test">
 					<Panel id="test">
-
+						<PanelHeader>Пробный тест</PanelHeader>
+						<Group>
+							<Div>
+								<FormLayout>
+									1. По статистике, по HLA-фенотипу подходит только 1 человек из ... ?
+									<FormItem>
+										<Radio name="test" value="1">500000</Radio>
+										<Radio name="test" value="2">50000</Radio>
+										<Radio name="test" value="3">1000000</Radio>
+										<Radio name="test" value="4">300000</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									2. Кто может стать донором?
+									<FormItem>
+										<Radio name="test" value="1">Любой гражданин РФ в возрасте от 14 до 45 лет</Radio>
+										<Radio name="test" value="2">Любой гражданин РФ</Radio>
+										<Radio name="test" value="3">Любой здоровый гражданин РФ без хронических заболеваний в возрасте от 18 до 45 лет</Radio>
+										<Radio name="test" value="4">Любой гражданин РФ без хронических заболеваний</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									3. Трудно ли восстановиться после донорства?
+									<FormItem>
+										<Radio name="test" value="1">Трудно</Radio>
+										<Radio name="test" value="2">Легко</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									4. Правда ли, что донором костного мозга можно стать только один раз?
+									<FormItem>
+										<Radio name="test" value="1">Да</Radio>
+										<Radio name="test" value="2">Нет</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									5. *Заглужка* Верна ли статистика:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									6. *Заглужка* ???:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									7. *Заглужка* ???:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+						</Group>
 					</Panel>
 				</View>
 			</Root>
