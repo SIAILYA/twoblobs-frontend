@@ -199,7 +199,7 @@
 
 .hello-onb, .answer-onb, .result-onb{
     color: #e99787;
-    font-size: 10vh;
+    font-size: 8vh;
     font-weight: 500;
 }
 
@@ -224,4 +224,77 @@
     50% {
         transform: translate(20px,0) rotate(10deg);
     }
+}
+
+.gallery-knowledge{
+    height: 80vh;
+}
+
+.knowledge-question{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: auto;
+    color: #727077;
+}
+
+.correct-answer{
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 5vh;
+    color: var(--accent);
+}
+
+.form-status-answer{
+    margin-top: 5vh;
+}
+
+.knowledge-answers{
+    margin-top: 20px;
+}
+
+.correct-variant .Radio__container h4, .correct-variant .Radio__container .Radio__icon{
+    color: #4bb34b;
+    border-color: #4bb34b!important;
+}
+
+.correct-variant .Radio__container .Radio__icon:after{
+    background-color: #4bb34b!important;
+}
+
+.uncorrect-variant .Radio__container h4, .uncorrect-variant .Radio__container .Radio__icon{
+    color: #e64646;
+    border-color: #e64646!important;
+}
+
+.uncorrect-variant .Radio__container .Radio__icon:after{
+    background-color: #e64646!important;
+}
+
+.results-knowledge{
+    font-size: 15vh;
+    font-weight: 600;
+    margin-top: 5vh;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.results-knowledge-header{
+    margin-top: 20px;
+}
+
+.results-knowledge-header, .results-knowledge-caption, .results-knowledge-questions{
+    font-weight: 500;
+}
+
+.results-knowledge-caption{
+    font-size: 24px;
+    margin-top: 5vh;
+}
+.results-knowledge, .results-knowledge-caption{
+    color: #e99787;
+}
+
+.Gallery__slide{
+    overflow-y: scroll;
 }
