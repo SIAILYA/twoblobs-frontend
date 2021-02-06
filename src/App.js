@@ -5,7 +5,8 @@ import bridge from "@vkontakte/vk-bridge";
 import {
 	Div, Header, Group, PanelHeader, View, AppRoot,
 	Button, Cell, Epic, Panel, Root, Tabbar, TabbarItem,
-	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack, Gallery
+	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack,
+	Radio, FormLayout, FormItem, Gallery
 } from "@vkontakte/vkui";
 
 import {
@@ -77,7 +78,7 @@ const questions = [
 ]
 
 const App = () => {
-	const [activeView, setActiveView] = useState("main");
+	const [activeView, setActiveView] = useState("knowledge-test");
 	const [activePanel, setActivePanel] = useState("main");
 	const [activeArticlePanel, setActiveArticlePanel] = useState("feed");
 	const [activeStory, setActiveStory] = useState("match");
@@ -292,6 +293,86 @@ const App = () => {
 						</Group>
 					</Panel>
 				</View>
+
+				<View id="knowledge-test" activePanel="test">
+					<Panel id="test">
+						<PanelHeader>Пробный тест</PanelHeader>
+						<Gallery
+						>
+							<Div>
+								<FormLayout>
+									По статистике, по HLA-фенотипу подходит только 1 человек из ... ?
+									<FormItem>
+										<Radio name="test" value="1">500000</Radio>
+										<Radio name="test" value="2">50000</Radio>
+										<Radio name="test" value="3">1000000</Radio>
+										<Radio name="test" value="4">300000</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									Кто может стать донором?
+									<FormItem>
+										<Radio name="test" value="1">Любой гражданин РФ в возрасте от 14 до 45 лет</Radio>
+										<Radio name="test" value="2">Любой гражданин РФ</Radio>
+										<Radio name="test" value="3">Любой здоровый гражданин РФ без хронических заболеваний в возрасте от 18 до 45 лет</Radio>
+										<Radio name="test" value="4">Любой гражданин РФ без хронических заболеваний</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									Трудно ли восстановиться после донорства?
+									<FormItem>
+										<Radio name="test" value="1">Трудно</Radio>
+										<Radio name="test" value="2">Легко</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									Правда ли, что донором костного мозга можно стать только один раз?
+									<FormItem>
+										<Radio name="test" value="1">Да</Radio>
+										<Radio name="test" value="2">Нет</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									*Заглужка* Верна ли статистика:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									*Заглужка* ???:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+							<Div>
+								<FormLayout>
+									*Заглужка* ???:
+									<FormItem>
+										<Radio name="test" value="1">??</Radio>
+										<Radio name="test" value="2">??</Radio>
+										<Radio name="test" value="3">??</Radio>
+										<Radio name="test" value="4">??</Radio>
+									</FormItem>
+								</FormLayout>
+							</Div>
+						</Gallery>
 				<View id="cards-test" activePanel={activePanel}>
 					<Panel id="cards-onboarding">
 						<Gallery
