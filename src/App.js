@@ -5,7 +5,7 @@ import {
 	Div, Header, Group, PanelHeader, View, AppRoot,
 	Button, Cell, Epic, Panel, Root, Tabbar, TabbarItem,
 	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack,
-	Radio, FormLayout, FormItem
+	Radio, FormLayout, FormItem, Gallery
 } from "@vkontakte/vkui";
 import {
 	Icon16ArticleOutline,
@@ -250,10 +250,11 @@ const App = () => {
 				<View id="knowledge-test" activePanel="test">
 					<Panel id="test">
 						<PanelHeader>Пробный тест</PanelHeader>
-						<Group>
+						<Gallery
+						>
 							<Div>
 								<FormLayout>
-									1. По статистике, по HLA-фенотипу подходит только 1 человек из ... ?
+									По статистике, по HLA-фенотипу подходит только 1 человек из ... ?
 									<FormItem>
 										<Radio name="test" value="1">500000</Radio>
 										<Radio name="test" value="2">50000</Radio>
@@ -264,7 +265,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									2. Кто может стать донором?
+									Кто может стать донором?
 									<FormItem>
 										<Radio name="test" value="1">Любой гражданин РФ в возрасте от 14 до 45 лет</Radio>
 										<Radio name="test" value="2">Любой гражданин РФ</Radio>
@@ -275,7 +276,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									3. Трудно ли восстановиться после донорства?
+									Трудно ли восстановиться после донорства?
 									<FormItem>
 										<Radio name="test" value="1">Трудно</Radio>
 										<Radio name="test" value="2">Легко</Radio>
@@ -284,7 +285,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									4. Правда ли, что донором костного мозга можно стать только один раз?
+									Правда ли, что донором костного мозга можно стать только один раз?
 									<FormItem>
 										<Radio name="test" value="1">Да</Radio>
 										<Radio name="test" value="2">Нет</Radio>
@@ -293,7 +294,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									5. *Заглужка* Верна ли статистика:
+									*Заглужка* Верна ли статистика:
 									<FormItem>
 										<Radio name="test" value="1">??</Radio>
 										<Radio name="test" value="2">??</Radio>
@@ -304,7 +305,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									6. *Заглужка* ???:
+									*Заглужка* ???:
 									<FormItem>
 										<Radio name="test" value="1">??</Radio>
 										<Radio name="test" value="2">??</Radio>
@@ -315,7 +316,7 @@ const App = () => {
 							</Div>
 							<Div>
 								<FormLayout>
-									7. *Заглужка* ???:
+									*Заглужка* ???:
 									<FormItem>
 										<Radio name="test" value="1">??</Radio>
 										<Radio name="test" value="2">??</Radio>
@@ -324,7 +325,8 @@ const App = () => {
 									</FormItem>
 								</FormLayout>
 							</Div>
-						</Group>
+						</Gallery>
+
 					</Panel>
 				</View>
 			</Root>
