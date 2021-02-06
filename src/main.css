@@ -77,3 +77,151 @@
     border-radius: 50%;
     box-shadow: 0 2px 10px 2px rgba(50, 50, 50, 0.15);
 }
+
+.question-box{
+    height: 75vh;
+}
+
+.question-box .animated{
+    height: 100%;
+}
+
+.question-card{
+    border-radius: 20px;
+    height: calc(60% - 2.5vh);
+    width: 80%;
+    position: absolute;
+    transition: all ease-in-out .3s;
+    top: 5%;
+    left: 5%;
+    padding: 5%;
+    background-color: white;
+}
+
+.ads-card{
+    border-radius: 20px;
+    height: calc(60% - 2.5vh);
+    width: 80%;
+    position: absolute;
+    transition: all ease-in-out .3s;
+    top: 5%;
+    left: 5%;
+    padding: 5%;
+    background-color: #e99787;
+    color: white!important;
+}
+
+.ads-card .question-text, .ads-card .question-index{
+    color: white!important;
+}
+
+.active-question{
+    box-shadow: 0 2px 10px 2px rgba(50, 50, 50, 0.15);
+}
+
+.question-index{
+    color: #727077;
+}
+
+.question-text{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 5vh;
+    word-break: break-word;
+    line-height: 1;
+    color: #727077;
+    text-align: center;
+    justify-content: center;
+}
+
+.question-text-box{
+    text-align: center;
+}
+
+.question-buttons{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.question-buttons div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+    color: #727077;
+}
+
+.question-buttons div button{
+    box-shadow: 0 2px 10px 2px rgba(50, 50, 50, 0.15);
+}
+
+.question-buttons div button div{
+    color: white;
+}
+
+.question-button{
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+.swipe-or-buttons{
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 34%;
+}
+
+.gallery-onb{
+    height: 88vh;
+}
+
+.slide-onb{
+    text-align: center;
+}
+
+.pic-onb{
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    margin-top: 5vh;
+    animation: spin infinite 3s;
+}
+
+.hand-onb-pic{
+    animation: wave infinite 3s;
+}
+
+.hello-onb, .answer-onb, .result-onb{
+    color: #e99787;
+    font-size: 10vh;
+    font-weight: 500;
+}
+
+.text-onb{
+    margin-top: 10vh;
+    font-size: 18px;
+}
+
+@keyframes spin {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0,10px);
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translate(-15px, 0) rotate(-30deg);
+    }
+    50% {
+        transform: translate(20px,0) rotate(10deg);
+    }
+}
