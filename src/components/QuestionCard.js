@@ -3,7 +3,7 @@ import TinderCard from "react-tinder-card";
 import {Button} from "@vkontakte/vkui";
 
 
-const QuestionCard = React.forwardRef(({currentIndex, questionSwiped, questionIndex, questionItem}, ref) => {
+const QuestionCard = React.forwardRef(({achievementGet, currentIndex, questionSwiped, questionIndex, questionItem}, ref) => {
     const adsOrQuestion = (questionItem.type === "ads" ? "ads-card" : "question-card")
     const activeClass = (currentIndex === questionIndex) ? (adsOrQuestion + " active-question") : (adsOrQuestion + " question-card")
 
@@ -23,7 +23,7 @@ const QuestionCard = React.forwardRef(({currentIndex, questionSwiped, questionIn
                 </div>
                 {
                     questionItem.type === "ads" &&
-                    <Button href={questionItem.link} target="_blank" style={{marginTop: 20, border: "solid 2px white"}}>
+                    <Button href={questionItem.link} target="_blank" onclick={() => {achievementGet(4)}} style={{marginTop: 20, border: "solid 2px white", color: "white!important"}}>
                         {questionItem.action}
                     </Button>
                 }

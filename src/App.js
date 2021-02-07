@@ -6,20 +6,20 @@ import {
 	Div, Header, PanelHeader, View, AppRoot,
 	Button, Epic, Panel, Root, Tabbar, TabbarItem,
 	Avatar, Card, SimpleCell, RichCell, PanelHeaderBack,
-	Radio, FormLayout, Gallery, FormStatus
+	Radio, FormLayout, Gallery, FormStatus, ScreenSpinner, Placeholder, Snackbar
 } from "@vkontakte/vkui";
 
 import {
 	Icon16ArticleOutline,
-	Icon16LinkOutline,
+	Icon16LinkOutline, Icon20FavoriteCircleFillYellow,
 	Icon24Flash,
 	Icon28AdvertisingOutline,
 	Icon28ChevronLeftOutline,
-	Icon28ChevronRightOutline,
-	Icon28DoneOutline,
-	Icon28FireOutline,
+	Icon28ChevronRightOutline, Icon28CoinsOutline, Icon28CompassOutline,
+	Icon28DoneOutline, Icon28FavoriteOutline,
+	Icon28FireOutline, Icon28KeyOutline, Icon28LikeOutline, Icon28MarketLikeOutline,
 	Icon28MenuOutline,
-	Icon28NewsfeedOutline
+	Icon28NewsfeedOutline, Icon56DownloadOutline
 } from "@vkontakte/icons";
 
 import "./main.css"
@@ -31,14 +31,27 @@ import banner_reg_big from "./img/banner_reg_big.png"
 import banner_knw_big from "./img/banner_knw_big.png"
 import hand from "../src/img/privacy_outline_28.svg"
 import phone from "../src/img/smartphone_outline_28.svg"
-import ok from "../src/img/thumbs_up_outline_28.svg"
+import user from "../src/img/user_added_outline_28.svg"
+import fire from "../src/img/fire_outline_28.svg"
+import light from "../src/img/lightbulb_star_outline_28.svg"
+import narrative from "../src/img/narrative_outline_28.svg"
+import poll from "../src/img/poll_32.svg"
+
 
 const articles = [
 	{
 		type: "article",
 		text: [
-			{section: "Первый заголовок", text: "Ахвхахвххахвха я хочу пиццы лолололололо пиццы мне пиццыы аааа хочу есть!!!!!!"},
-			{section: "Еще заголовок", text: "Ахвхахвххахвха я хочу пиццы лолололололо пиццы мне пиццыы аааа хочу есть!!!!!!"},
+			{section: "Костный мозг — то же самое, что спинной мозг", text: "Эти два органа выполняют совершенно разные функции и состоят из разных видов клеток. Спинной мозг состоит из нейронов и отростков нервных клеток и относится к центральной нервной системе. Костный мозг — это орган кроветворной системы, ткань, находящаяся внутри кости.\n" +
+					"\n" +
+					"Если главная задача спинного мозга — передача импульсов, то костный мозг отвечает за процесс кроветворения и выработки иммунных клеток."},
+			{section: "Сдавать костный мозг очень больно", text: "Донорство кроветворных клеток не связано с сильным болевым синдромом. Поскольку костный мозг часто путают со спинным, то распространен миф о том, что забор будет делаться из позвоночника и при этом донор будет испытывать острую боль."},
+			{section: "Сдавать костный мозг опасно", text: "Прежде чем человек сдаст кроветворные клетки, врачи проводят тщательное обследование, определяющее отсутствие противопоказаний. Это сводит к минимуму риск осложнений. Развитие медицинских технологий делает эту процедуру достаточно безопасной.\n" +
+					"\n" +
+					"Согласно принятому в международной практике регламенту, решение о том, допустить ли человека к донорству, принимают врачи из клиники, никак не связанной с той больницей, где будет проходить трансплантация. Это делается для того, чтобы максимально защитить донора.\n" +
+					"\n" +
+					"Донор и реципиент не должны знать друг о друге и не могут находиться в одной больнице. Знакомство донора и реципиента возможно только спустя два года после трансплантации."},
+			{section: "Восстановиться после донорства костного мозга трудно", text: "Способность к регенерации стволовых клеток настолько высока, что при необходимости донором можно становиться несколько раз в жизни без последствий для здоровья."},
 		],
 		title: "10 мифов",
 		image: "https://i.ibb.co/MftjnsY/1.png",
@@ -55,11 +68,12 @@ const articles = [
 	}
 ]
 
+
 const questions = [
 	{type: "question", text: "Мне нравится рок-музыка"},
 	{type: "question", text: "Я люблю собак"},
 	{type: "question", text: "Я стараюсь, по возможности, сразу же ответить на все сообщения в соцсетях"},
-	{type: "ads", text: "Я бы хотел стать донором", action: "Стать донором", link: ""},
+	{type: "ads", text: "Я бы хотел стать донором", action: "Стать донором", link: "https://rdkm.rusfond.ru/registr_stat/donation"},
 	{type: "question", text: "Я люблю дискотеки"},
 	{type: "question", text: "Моё любимое время года - зима"},
 	{type: "question", text: "Я люблю пиццу"},
@@ -69,7 +83,7 @@ const questions = [
 	{type: "question", text: "Мне нравится учится или работать дистанционно"},
 	{type: "question", text: "Мне нравятся комедии"},
 	{type: "question", text: "Я люблю кошек"},
-	{type: "ads", text: "Я хочу сделать мир лучше", action: "Сделать мир лучше", link: ""},
+	{type: "ads", text: "Я хочу сделать мир лучше", action: "Сделать мир лучше", link: "https://rdkm.rusfond.ru/registr_stat/donation"},
 	{type: "question", text: "Зачастую я одеваюсь в тёмную одежду"},
 	{type: "question", text: "Я студент и живу в общежитии"},
 	{type: "question", text: "У меня был опыт в программировании"},
@@ -77,6 +91,7 @@ const questions = [
 	{type: "question", text: "Для меня интересная книга или игра зачастую лучше, чем светское мероприятие"},
 	{type: "question", text: "Я люблю хлеб"}
 ]
+
 
 const knowledge = [
 	{
@@ -117,12 +132,47 @@ const knowledge = [
 	}
 ]
 
+
+const achievements = [
+	{
+		id: 1,
+		icon: <Icon28FavoriteOutline/>,
+		title: "Зайти в приложение",
+		description: "Зайди в приложение и пройди онбординг"
+	},
+	{
+		id: 2,
+		icon: <Icon28CompassOutline/>,
+		title: "Ответить на 20 вопросов из теста",
+		description: "Пройди тест с карточками!"
+	},
+	{
+		id: 3,
+		icon: <Icon28FireOutline/>,
+		title: "Поделитесь...",
+		description: "Ой, что?"
+	},
+	{
+		id: 4,
+		icon: <Icon28MarketLikeOutline/>,
+		title: "Захотеть помочь",
+		description: "Перейди по одной из ссылок на сайт РусФонда с пожерствованиями"
+	},
+	{
+		id: 5,
+		icon: <Icon28KeyOutline/>,
+		title: "Пройти тест на знание",
+		description: "Докажи всем, что знаете, что такое костный мозг"
+	}
+]
+
+
 const App = () => {
 	const [activeView, setActiveView] = useState("main");
 	const [activePanel, setActivePanel] = useState("main");
 	const [activeArticlePanel, setActiveArticlePanel] = useState("feed");
 	const [activeStory, setActiveStory] = useState("match");
-	const [popout, setPopout] = useState(null);
+	const [popout, setPopout] = useState(<ScreenSpinner size="large"/>);
 	const [article, setArticle] = useState({text: []})
 	const [fetchedUser, setUser] = useState({});
 	const [questionIndex, setQuestionIndex] = useState(1)
@@ -130,6 +180,8 @@ const App = () => {
 	const [slideIndex, setSlideIndex] = useState(0)
 	const [knowledgeAnswers, setKnowledgeAnswers] = useState(Array(knowledge.length).fill(null))
 	const [knowledgeResult, setKnowledgeResult] = useState(0)
+	const [userAchievements, setUserAcvievements] = useState([])
+	const [snackBar, setSnackBar] = useState(null)
 
 	const childRefs = useMemo(() => Array(questions.length).fill(0).map(i => React.createRef()), [])
 
@@ -151,8 +203,25 @@ const App = () => {
 			setPopout(null);
 		}
 
+		async function fetchOnboardingVisit() {
+			const visit = await bridge.send("VKWebAppStorageGet", {"keys": ["onb_visit"]})
+			console.log(visit)
+			if (visit.keys[0].onb_visit === "true") {
+				setActiveView("main")
+			} else {
+				setActiveView("onboarding")
+			}
+		}
+
 		fetchData();
+		fetchOnboardingVisit();
 	}, []);
+
+	function setOnboardingVisit() {
+		bridge.send("VKWebAppStorageSet", {"key": "onb_visit", "value": "true"}).then(() => {
+			setPopout(null)
+		})
+	}
 
 	const openArticleViewer = (item) => {
 		setActiveArticlePanel("articleViewer")
@@ -169,6 +238,7 @@ const App = () => {
 
 		if (index === 20) {
 			setActivePanel("cards-results")
+			achievementGet(2)
 		}
 	}
 
@@ -184,9 +254,38 @@ const App = () => {
 		console.log(knowledgeAnswers)
 	}
 
-	function goResults() {
-		setActivePanel("results")
+	function completeKnowledgeTest() {
+		setActivePanel("results");
+		setSlideIndex(0);
 		setKnowledgeResult(knowledgeAnswers.filter(value => value === true).length)
+		achievementGet(5)
+	}
+
+	function completeStartOnboarding() {
+		setPopout(<ScreenSpinner size="large"/>)
+		setOnboardingVisit();
+		setActiveView("main");
+		setSlideIndex(0)
+		achievementGet(1)
+	}
+
+	function completeCardsOnboarding() {
+		setActivePanel("cards-panel");
+		setSlideIndex(0)
+	}
+
+	function achievementGet(achieve_id) {
+		setSnackBar(<Snackbar before={<Icon20FavoriteCircleFillYellow/>} onClose={() => {setSnackBar(null)}}>Новое достижение!</Snackbar>)
+		let old_achievements = JSON.parse(JSON.stringify(userAchievements))
+		old_achievements.push(achieve_id)
+		setUserAcvievements(old_achievements)
+	}
+
+	function applyStoryShare() {
+		bridge.send("VKWebAppShowStoryBox", { "background_type" : "image", "url" : "https://i.ibb.co/X7NzTFN/1.png"}).then(r => {
+			console.log(r)
+		})
+		achievementGet(3)
 	}
 
 	return (
@@ -285,9 +384,9 @@ const App = () => {
 										<div style={{width: "20px", backgroundColor: "#aeaeae", marginRight: 10}}>
 										</div>
 										<div style={{fontStyle: "italic", fontSize: "13px"}}>
-											Костный мозг у каждого свой, и найти подходящего донора с подходящими стволовыми клетками не так просто, как найти человека с такой же группой крови.
-											Найти человека с таким же костным мозгом - все равно, что найти своего двойника по интересам.
-											Пройдите наш небольшой тест, чтобы убедиться, что каждый из нас уникален.
+											Найти подходящего тебе донора костного мозга не так просто, как, например,
+											найти человека с такой же группой крови, это все равно, что встретить своего двойника по интересам.
+											Пройди наш небольшой тест, чтобы убедиться, что каждый из нас уникален.
 										</div>
 									</Div>
 									<BannerBlock
@@ -311,14 +410,16 @@ const App = () => {
 									</Div>
 									<BannerBlock
 										size="m"
-										class="banner_main"
+										class="banner_knowledge"
 										header="Проверка знаний"
 										subheader="Узнай, как хорошо ты знаешь устройство донорской системы!"
 										image={banner_knw_big}
 										button="Пройти тест"
+										color="#0084ff"
 										action={() => {setActiveView("knowledge-test"); setActivePanel("test")}}
 									>
 									</BannerBlock>
+									{snackBar}
 								</Panel>
 							</View>
 							<View id="profile" activePanel="profile">
@@ -330,43 +431,94 @@ const App = () => {
 									<span className="text-center user-name">{fetchedUser.first_name} {fetchedUser.last_name}</span>
 									{/*<span className="text-center user-stat">5 достижений | 15 вопросов</span>*/}
 									<div style={{marginTop: 10}}>
-										<SimpleCell description="Расскажите о приложении в своих историях!" after={<Icon28AdvertisingOutline/>}>
+										<SimpleCell description="Расскажи о приложении в своих историях!" after={<Icon28AdvertisingOutline/>} onClick={() => {
+											applyStoryShare()
+										}}>
 											Поделиться с друзьями
 										</SimpleCell>
 									</div>
 									<Div>
 										<Card style={{overflow: "hidden"}}>
 											<Header mode="secondary">Достижения</Header>
-											<SimpleCell
-												disabled
-												before={<Icon24Flash width={28} className="icon-achieve-complete"/>}
-												description="Выполненное достижение"
-												after={<Icon28DoneOutline className="done-achieve"/>}
-											>
-												Название достижения
-											</SimpleCell>
-											<SimpleCell
-												disabled
-												before={<Icon28FireOutline className="icon-achieve-uncomplete"/>}
-												description="Описание достижения"
-											>
-												Название достижения
-											</SimpleCell>
+											{
+												achievements.map((item, index) => {
+													return(
+														<SimpleCell
+															key={index}
+															disabled
+															before={item.icon}
+															description={item.description}
+															after={userAchievements.indexOf(item.id)!== -1 ? <Icon28DoneOutline className="done-achieve"/> : null}
+														>
+															{item.title}
+														</SimpleCell>
+													)
+												})
+											}
 										</Card>
 									</Div>
+									{snackBar}
 								</Panel>
 							</View>
 						</Epic>
 					</Panel>
 				</View>
 
-				<View id="onboarding" activePanel="onboarding-panel" popout={popout}>
-
+				<View id="onboarding" activePanel="onboarding" popout={popout}>
+					<Panel id="onboarding">
+						<Gallery
+							slideWidth="100%"
+							align="center"
+							className="gallery-onb"
+							slideIndex={slideIndex}
+							isDraggable
+							onChange={slideIndexChange => setSlideIndex(slideIndexChange)}
+						>
+							<div className="slide-onb">
+								<Div>
+									<span className="hello-onb blue-gradient-cl">Привет!</span>
+									<img src={hand} alt="logo-s" className="hand-onb-pic pic-onb"/>
+									<div className="text-onb">Мы - проект "Две капли", призванный привлечь внимание к проблеме донорства костного мозга в России</div>
+								</Div>
+							</div>
+							<div className="slide-onb">
+								<Div>
+									<span className="answer-onb blue-gradient-cl">Проблема</span>
+									<img src={narrative} alt="marker" className="marker-onb-pic pic-onb"/>
+									<div className="text-onb">В России каждые 20 минут один человек узнает, что у него рак крови и ему срочно требуется донор костного мозга</div>
+								</Div>
+							</div>
+							<div className="slide-onb">
+								<Div>
+									<span className="result-onb blue-gradient-cl">Шансы</span>
+									<img src={light} alt="result" className="result-onb-pic pic-onb"/>
+									<div className="text-onb">Шанс встретить своего генетического близнеца, чей костный мозг подойдет - 1 на 10000. Но шансы растут по мере пополнения Национального регистра доноров костного мозга!</div>
+								</Div>
+							</div>
+							<div className="slide-onb">
+								<Div>
+									<span className="result-onb blue-gradient-cl">Помощь</span>
+									<img src={fire} alt="result" className="result-onb-pic pic-onb"/>
+									<div className="text-onb">Ты всегда можешь помочь и другими способами, для этого не нужно становиться донором - можно помочь регистру и финансово</div>
+									<Div>
+										<Button size="m" href="https://rdkm.rusfond.ru/registr_stat/donation" target="_blank" onclick={() => {achievementGet(4)}} before={<Icon28LikeOutline/>}>Хочу помочь!</Button>
+									</Div>
+								</Div>
+							</div>
+						</Gallery>
+						<Div>
+							<Button stretched size="l" onClick={() => {slideIndex < 3 ? setSlideIndex((prev) => {return (prev + 1)}) : completeStartOnboarding()}}>
+								{
+									slideIndex === 3 ? "Начать" :"Дальше"
+								}
+							</Button>
+						</Div>
+					</Panel>
 				</View>
 
 				<View id="knowledge-test" activePanel={activePanel}>
 					<Panel id="test">
-						<PanelHeader>Пробный тест</PanelHeader>
+						<PanelHeader>Тест на знания</PanelHeader>
 						<Gallery
 							slideWidth="100%"
 							align="center"
@@ -435,13 +587,14 @@ const App = () => {
 									onClick={() => {
 										slideIndex < (knowledge.length - 1) ?
 										setSlideIndex((prev) => {return (prev + 1)}) :
-										goResults();
+										completeKnowledgeTest();
 									}}>
 								{
 									slideIndex === (knowledge.length - 1) ? "Закончить" :"Дальше"
 								}
 							</Button>
 						</Div>
+						{snackBar}
 					</Panel>
 					<Panel id="results">
 						<PanelHeader left={<PanelHeaderBack onClick={() => {setActiveView("main")}}/>}>Результаты</PanelHeader>
@@ -476,6 +629,7 @@ const App = () => {
 							</Button>
 						</Div>
 					</Panel>
+					{snackBar}
 				</View>
 				<View id="cards-test" activePanel={activePanel}>
 					<Panel id="cards-onboarding">
@@ -504,13 +658,13 @@ const App = () => {
 							<div className="slide-onb">
 								<Div>
 									<span className="result-onb blue-gradient-cl">Результат</span>
-									<img src={ok} alt="result" className="result-onb-pic pic-onb"/>
+									<img src={user} alt="result" className="result-onb-pic pic-onb"/>
 									<div className="text-onb">Он покажет, насколько трудно найти такого же, как ты</div>
 								</Div>
 							</div>
 						</Gallery>
 						<Div>
-							<Button stretched size="l" onClick={() => {slideIndex < 2 ? setSlideIndex((prev) => {return (prev + 1)}) : setActivePanel("cards-panel")}}>
+							<Button stretched size="l" onClick={() => {slideIndex < 2 ? setSlideIndex((prev) => {return (prev + 1)}) : completeCardsOnboarding()}}>
 								{
 									slideIndex === 2 ? "Начать" :"Дальше"
 								}
@@ -522,7 +676,7 @@ const App = () => {
 							{
 								questions.map((item, index) => {
 									return(
-										<QuestionCard ref={childRefs[index]} currentIndex={questionIndex} questionIndex={questions.length - index} questionItem={item} questionSwiped={questionSwiped} key={index}/>
+										<QuestionCard achievementGet={achievementGet} ref={childRefs[index]} currentIndex={questionIndex} questionIndex={questions.length - index} questionItem={item} questionSwiped={questionSwiped} key={index}/>
 									)
 								})
 							}
@@ -533,7 +687,7 @@ const App = () => {
 								Нет
 							</div>
 							<div className="swipe-or-buttons">
-								Свайпайте или пользуйтесь кнопками
+								Свайпай или пользуйся кнопками
 							</div>
 							<div>
 								<Button onClick={() => {answerQuestion(1)}} className="question-button"><Icon28ChevronRightOutline/></Button>
@@ -543,7 +697,24 @@ const App = () => {
 					</Panel>
 					<Panel id="cards-results">
 						<PanelHeader left={<PanelHeaderBack onClick={() => {setActiveView("main")}}/>}>Результаты</PanelHeader>
-
+						<div className="cards-result-header">Твой ответ - один на миллион</div>
+						<div className="cards-result-chart">
+							<img src={poll}/>
+						</div>
+						<Div className="cards-result-caption">И это не шутка! Найти такую же комбинацию ответов, как у тебя почти так же трудно, как найти подходящего донора костного мозга! Но уже сейчас ты можешь помочь! Вступай в реестр доноров или помогай материально!</Div>
+						<Div className="d-flex justify-content-center">
+							<Button size="m" href="https://rdkm.rusfond.ru/registr_stat/donation" target="_blank" onclick={() => {achievementGet(4)}} before={<Icon28LikeOutline/>}>Хочу помочь!</Button>
+						</Div>
+						<Div className="cards-result-home">
+							<Button size="l" stretched onClick={() => {setActiveView("main")}}>Домой</Button>
+						</Div>
+						{snackBar}
+					</Panel>
+				</View>
+				<View id="loading" activePanel="loading">
+					<Panel id="loading">
+						<Placeholder icon={<Icon56DownloadOutline width={128} height={128} fill="#e99787"/>} header="Загружаем картиночки и скрипты..." style={{marginTop: "20vh"}}>
+						</Placeholder>
 					</Panel>
 				</View>
 			</Root>

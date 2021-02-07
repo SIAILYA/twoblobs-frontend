@@ -11,7 +11,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // // Init VK  Mini App
 
 
-import("./eruda").then(({ default: eruda }) => {}); //runtime download
 
 // if (process.env.NODE_ENV === "development") {
+//     import("./eruda").then(({ default: eruda }) => {}); //runtime download
 // }
